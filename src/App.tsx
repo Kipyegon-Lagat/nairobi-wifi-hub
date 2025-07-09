@@ -10,6 +10,10 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import ServicePlans from "./pages/ServicePlans";
+import Account from "./pages/Account";
+import Bills from "./pages/Bills";
+import MyUsage from "./pages/MyUsage";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +45,34 @@ const App = () => (
               <ProtectedRoute adminOnly>
                 <Layout>
                   <ServicePlans />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/account" element={
+              <ProtectedRoute>
+                <Layout>
+                  <Account />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/bills" element={
+              <ProtectedRoute>
+                <Layout>
+                  <Bills />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/my-usage" element={
+              <ProtectedRoute>
+                <Layout>
+                  <MyUsage />
+                </Layout>
+              </ProtectedRoute>
+            } />
+            <Route path="/support" element={
+              <ProtectedRoute>
+                <Layout>
+                  <Support />
                 </Layout>
               </ProtectedRoute>
             } />
