@@ -61,41 +61,55 @@ export function CustomerDashboard() {
 
   const fetchCustomerData = async () => {
     try {
-      // Fetch customer data
-      const { data: customer } = await supabase
-        .from('customers')
-        .select('*')
-        .eq('user_id', user?.id)
-        .single();
+      if (!user?.id) {
+        setLoading(false);
+        return;
+      }
 
-      // Fetch active subscription
-      const { data: subscription } = await supabase
-        .from('customer_subscriptions')
-        .select(`
-          *,
-          service_plans (*)
-        `)
-        .eq('customer_id', customer?.id)
-        .eq('is_active', true)
-        .single();
+      // Use Promise.allSettled to handle failures gracefully
+      const [customerResult, invoicesResult] = await Promise.allSettled([
+        supabase.from('customers').select('*').eq('user_id', user.id).maybeSingle(),
+        supabase.from('invoices').select('*').order('created_at', { ascending: false }).limit(5)
+      ]);
 
-      // Fetch recent invoices
-      const { data: recentInvoices } = await supabase
-        .from('invoices')
-        .select('*')
-        .eq('customer_id', customer?.id)
-        .order('created_at', { ascending: false })
-        .limit(5);
+      const customer = customerResult.status === 'fulfilled' ? customerResult.value.data : null;
+      const recentInvoices = invoicesResult.status === 'fulfilled' ? invoicesResult.value.data : [];
+
+      let subscription = null;
+      let plan = null;
+
+      if (customer?.id) {
+        const { data: subscriptionData } = await supabase
+          .from('customer_subscriptions')
+          .select(`
+            *,
+            service_plans (*)
+          `)
+          .eq('customer_id', customer.id)
+          .eq('is_active', true)
+          .maybeSingle();
+
+        subscription = subscriptionData;
+        plan = subscriptionData?.service_plans;
+      }
 
       setData({
         customer,
         subscription,
-        plan: subscription?.service_plans,
+        plan,
         recentInvoices: recentInvoices || [],
         usageData
       });
     } catch (error) {
       console.error('Error fetching customer data:', error);
+      // Set empty data to prevent infinite loading
+      setData({
+        customer: null,
+        subscription: null,
+        plan: null,
+        recentInvoices: [],
+        usageData
+      });
     } finally {
       setLoading(false);
     }
