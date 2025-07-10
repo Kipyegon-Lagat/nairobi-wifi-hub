@@ -138,6 +138,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAdmin = profile?.role === 'admin';
   const isCustomer = profile?.role === 'customer';
 
+  // Debug logging
+  console.log('Auth Debug:', { 
+    user: user?.email, 
+    profile: profile, 
+    isAdmin, 
+    isCustomer, 
+    loading 
+  });
+
   const value = {
     user,
     profile,
