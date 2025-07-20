@@ -21,7 +21,7 @@ interface DashboardStats {
   totalRevenue: number;
   monthlyRevenue: Number;
   totalPlans: number;
-  pendingPayments: number;
+  pendingPayments: Number;
 }
 
 export function AdminDashboard() {
