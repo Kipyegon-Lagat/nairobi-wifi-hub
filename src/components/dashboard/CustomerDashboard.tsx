@@ -102,7 +102,7 @@ export function CustomerDashboard() {
       });
     } catch (error) {
       console.error('Error fetching customer data:', error);
-      // Set empty data to prevent infinite loading
+      // Set empty data to prevent infinite load
       setData({
         customer: null,
         subscription: null,
