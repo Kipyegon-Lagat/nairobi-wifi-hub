@@ -16,7 +16,7 @@ import {
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
 
 interface DashboardStats {
-  totalCustomers: number;
+  totalCustomers: Number;
   activeCustomers: number;
   totalRevenue: number;
   monthlyRevenue: number;
