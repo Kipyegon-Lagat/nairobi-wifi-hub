@@ -17,7 +17,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 interface DashboardStats {
   totalCustomers: Number;
-  activeCustomers: number;
+  activeCustomers: Number;
   totalRevenue: number;
   monthlyRevenue: number;
   totalPlans: number;
