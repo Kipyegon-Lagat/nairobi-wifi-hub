@@ -19,7 +19,7 @@ interface DashboardStats {
   totalCustomers: Number;
   activeCustomers: Number;
   totalRevenue: number;
-  monthlyRevenue: number;
+  monthlyRevenue: Number;
   totalPlans: number;
   pendingPayments: number;
 }
