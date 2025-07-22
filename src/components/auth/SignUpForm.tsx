@@ -98,7 +98,7 @@ export function SignUpForm({ onSwitchToLogin }: SignUpFormProps) {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">Password </Label>
             <div className="relative">
               <Input
                 id="password"
