@@ -133,7 +133,7 @@ export function AdminDashboard() {
         <div>
           <h1 className="text-3xl font-bold"> Admin Dashboard</h1>
           <p className="text-muted-foreground">
-            Welcome back! Here's your business overview.
+            Welcome back! .
           </p>
         </div>
         <div className="flex space-x-2">
