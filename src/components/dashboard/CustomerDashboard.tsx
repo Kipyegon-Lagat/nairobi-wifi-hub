@@ -141,7 +141,7 @@ export function CustomerDashboard() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Welcome back, {profile?.full_name}!</h1>
+          <h1 className="text-3xl font-bold"> Welcome back, {profile?.full_name}!</h1>
           <p className="text-muted-foreground">
             Here's your WiFi service overview
           </p>
