@@ -86,7 +86,7 @@ export function SignUpForm({ onSwitchToLogin }: SignUpFormProps) {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">email</Label>
             <Input
               id="email"
               type="email"
