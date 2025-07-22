@@ -62,7 +62,7 @@ export function SignUpForm({ onSwitchToLogin }: SignUpFormProps) {
       <CardHeader>
         <CardTitle>Create Account</CardTitle>
         <CardDescription>
-          Join Nairobi WiFi Solutions
+          Join The Nairobi WiFi Solutions
         </CardDescription>
       </CardHeader>
       <CardContent>
