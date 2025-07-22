@@ -49,7 +49,7 @@ export function SignUpForm({ onSwitchToLogin }: SignUpFormProps) {
         <CardContent className="pt-6">
           <Alert>
             <AlertDescription>
-              Account created successfully! Please check your email to verify your account. Redirecting to login...
+              Account created successfully! Please check your email to verify your account. Redirecting to login. . .
             </AlertDescription>
           </Alert>
         </CardContent>
