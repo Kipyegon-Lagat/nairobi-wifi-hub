@@ -30,7 +30,7 @@ const App = () => (
             <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Layout>
-                  <Dashboard />
+                  <Dashboard/>
                 </Layout>
               </ProtectedRoute>
             } />
