@@ -32,7 +32,7 @@ const App = () => (
                 <Layout>
                   <Dashboard/>
                 </Layout>
-              </ProtectedRoute>
+              </Protected Route>
             } />
             <Route path="/customers" element={
               <ProtectedRoute adminOnly>
