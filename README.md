@@ -11,7 +11,7 @@ This is a simple system for managing WiFi billing. Users can pay for WiFi access
 
 ## Requirements
 
-- Python 3.x
+- Python 3
 - Django (or your chosen web framework)
 - Database (e.g. SQLite, MySQL)
 
